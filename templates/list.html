@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReceiptLens</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 40px;
+            background-color: #fff;
+            color: #333;
+        }
+        h1 {
+            color: #007aff; /* Apple's blue */
+            font-weight: normal;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: none; /* Removes the border */
+            box-shadow: none; /* Removes any default shadow */
+            outline: none; /* Removes the highlight outline on focus */
+        }
+        button {
+            background-color: #007aff; /* Apple's blue */
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .navbar {
+            background-color: #fff; /* White background for the navbar */
+            text-align: center;
+            padding: 12px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+            position: sticky; /* Sticky position at the top of the page */
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #007aff; /* Apple's blue for links */
+            padding: 8px 15px;
+            text-decoration: none;
+            font-size: 16px; /* Adequate font size for navigation links */
+            font-weight: 500; /* Medium font weight for a touch of emphasis */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        .navbar a:hover {
+            background-color: #f0f0f0; /* Light grey background on hover */
+            border-radius: 5px; /* Rounded corners for the hover effect */
+        }
+    </style>
+  </head>
+  <body>
+    <h1>ReceiptLens</h1>
+    <div class="navbar">
+      <a href="/">Home</a>
+      <a href="/edit">Edit</a>
+      <a href="/list">List</a>
+  </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Bill Type</th>
+          <th>Vendor Name</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Total Amount</th>
+          <th>City</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for bill in bills %}
+        <tr>
+          <td>{{ bill[0] }}</td>
+          <td>{{ bill[1] }}</td>
+          <td>{{ bill[2] }}</td>
+          <td>{{ bill[3] }}</td>
+          <td>{{ bill[4] }}</td>
+          <td>{{ bill[5] }}</td>
+          <td>{{ bill[6] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

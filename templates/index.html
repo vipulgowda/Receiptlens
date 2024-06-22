@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReceiptLens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif; 
+            background-color: #f9f9f9; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333; /* Ensuring text color is globally set */
+        }
+        .container {
+            background: white;
+            padding: 40px; /* Increased padding for a more airy, spacious feel */
+            border-radius: 12px; /* Smoother border radius */
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1); /* Softer shadow for subtlety */
+            width: 400px; /* Fixing width for consistency */
+        }
+        h1 {
+            color: #007aff; /* Apple's blue for accent */
+            font-weight: 500; /* Medium weight for the title */
+            text-align: center; /* Center aligning the title */
+        }
+        h2 {
+            color: #007aff; /* Apple's blue for accent */
+            font-weight: 200; /* Medium weight for the title */
+            text-align: center; /* Center aligning the title */
+        }
+        form {
+            margin-top: 30px; /* More space above the form */
+        }
+        input[type="file"] {
+            display: block;
+            width: 100%; /* Full width input */
+            margin: 20px 0; /* More vertical margin for clarity */
+            padding: 10px; /* Padding inside the input for better touch */
+            border: 2px solid #ddd; /* Subtle border for the input */
+            border-radius: 8px; /* Rounded corners */
+        }
+        button {
+            background-color: #007aff; /* Using Apple's blue */
+            color: white;
+            border: none;
+            padding: 12px 24px; /* More padding for a better click area */
+            border-radius: 8px; /* Rounded corners for the button */
+            width: 100%; /* Full width button */
+            font-weight: 500; /* Medium font weight */
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        button:hover {
+            background-color: #0056b3; 
+        }
+        .navbar {
+            background-color: #fff; 
+            text-align: center;
+            padding: 12px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+            position: sticky; 
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #007aff; 
+            padding: 8px 15px;
+            text-decoration: none;
+            font-size: 16px; 
+            font-weight: 500; 
+            transition: background-color 0.3s; 
+        }
+        .navbar a:hover {
+            background-color: #f0f0f0; 
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/edit">Edit</a>
+            <a href="/list">List</a>
+        </div>
+        <h1>ReceiptLens</h1>
+        <h2>Upload Image to scan your Receipts</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>

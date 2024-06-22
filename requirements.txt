@@ -1,0 +1,12 @@
+grpcio
+langchain
+langchain_google_genai
+langchain-community
+google-cloud-vision
+google-cloud-storage
+google-cloud-datastore
+Flask
+pillow 
+fpdf
+python-dotenv
+gunicorn
